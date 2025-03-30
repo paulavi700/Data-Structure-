@@ -1,0 +1,1058 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "zUwqGcHx6Ynt"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "#Data Types and Structures Questions\n"
+      ],
+      "metadata": {
+        "id": "CiW7gRKs646t"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [],
+      "metadata": {
+        "id": "13k0RPWf7HJZ"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        " 1.What are data structures, and why are they important?\n",
+        " - Data structures are organized ways to store and manage data in a computer, like lists, arrays, or trees. They’re important because they improve efficiency in storing, retrieving, and processing data, making programs faster and more effective.\n",
+        "\n",
+        "2.Explain the difference between mutable and immutable data types with examples.\n",
+        "\n",
+        "- Mutable data types can be changed after creation, like lists in Python (e.g., `my_list = [1, 2, 3]; my_list[0] = 4` becomes `[4, 2, 3]`). Immutable data types cannot be altered once created, like strings (e.g., `my_str = \"hello\"; my_str[0] = \"j\"` raises an error, stays `\"hello\"`).\n",
+        "\n",
+        "3.What are the main differences between lists and tuples in Python?\n",
+        " - The main differences between **lists** and **tuples** in Python are:  \n",
+        "\n",
+        " I. **Mutability**: Lists are **mutable** (can be modified), while tuples are **immutable** (cannot be changed after creation).  \n",
+        " II. **Performance**: Tuples are **faster** than lists due to their immutability.  \n",
+        " III. **Memory Usage**: Tuples use **less memory** than lists.  \n",
+        " IV. **Syntax**: Lists use **square brackets** `[]`, while tuples use **parentheses** `()`.  \n",
+        " V. **Use Case**: Lists are used for **dynamic collections**, whereas tuples are used for **fixed collections** of data.\n",
+        "\n",
+        "4.Describe how dictionaries store data.\n",
+        " - Dictionaries in Python store data as **key-value pairs** using a **hash table**. Keys are **hashed** to determine their storage location, allowing **fast lookups (O(1) time complexity)**. Each key must be **unique and immutable**, while values can be of any type. Collisions are handled using **open addressing** or **linked lists** internally.\n",
+        "\n",
+        " 5.Why might you use a set instead of a list in Python?\n",
+        "  - You might use a **set** instead of a **list** in Python when:  \n",
+        "\n",
+        "  I. **Uniqueness**: You need to store **only unique elements** (no duplicates).  \n",
+        "  II. **Faster Lookups**: Sets provide **O(1) average time complexity** for membership tests (`in` operator), whereas lists take **O(n)**.  \n",
+        "  III. **Set Operations**: Sets support efficient **union, intersection, and difference** operations.  \n",
+        "\n",
+        "  However, sets are **unordered** and do not support **indexing or slicing** like lists.\n",
+        "\n",
+        "  6.What is a string in Python, and how is it different from a list?\n",
+        "   - A **string** in Python is an **immutable sequence of characters** enclosed in quotes (`' '` or `\" \"`).  \n",
+        "\n",
+        "   ### Key Differences from a List:  \n",
+        "   I. **Mutability**: Strings are **immutable**, while lists are **mutable** (can be modified).  \n",
+        "   II. **Elements**: Strings contain **only characters**, whereas lists can hold **any data type**.  \n",
+        "   III. **Operations**: Lists support **insertion, deletion, and modification**, while strings require **reconstruction** for changes.  \n",
+        "   IV. **Syntax**: Strings use quotes, while lists use **square brackets (`[]`)**.\n",
+        "\n",
+        " 7.How do tuples ensure data integrity in Python?\n",
+        "   - Tuples ensure **data integrity** in Python through **immutability**, meaning their elements **cannot be changed, added, or removed** after creation. This prevents **accidental modifications**, making tuples ideal for **fixed data structures**, **hashable keys**, and **safe data sharing** across functions.\n",
+        "\n",
+        "8.What is a hash table, and how does it relate to dictionaries in Python?\n",
+        " - A **hash table** is a data structure that stores **key-value pairs** using a **hashing function** to map keys to specific memory locations.  \n",
+        "\n",
+        " ### Relation to Python Dictionaries:  \n",
+        " - **Dictionaries** in Python are implemented using **hash tables**.  \n",
+        " - Keys are **hashed** to determine their storage index, allowing **O(1) average-time lookups**.  \n",
+        " - **Collisions** are handled using techniques like **open addressing** or **linked lists**.  \n",
+        " - Keys must be **immutable** (e.g., strings, numbers, tuples) to maintain consistent hashing.\n",
+        "\n",
+        "9.Can lists contain different data types in Python?\n",
+        " - Yes, **lists** in Python **can contain different data types**. A single list can hold **integers, floats, strings, booleans, other lists, tuples, dictionaries, and even functions**, making them highly flexible.\n",
+        "\n",
+        "10.Explain why strings are immutable in Python.\n",
+        " - Strings are **immutable** in Python to ensure **performance, security, and memory efficiency**.  \n",
+        "\n",
+        " ### Reasons for Immutability:  \n",
+        " I. **Memory Optimization**: Python **interns** (reuses) strings to save memory.  \n",
+        " II. **Hashability**: Immutable strings can be used as **dictionary keys** and **set elements**.  \n",
+        " III. **Thread Safety**: Immutability prevents accidental modifications in **multi-threaded programs**.  \n",
+        " IV. **Consistency**: Prevents unintended side effects when passing strings between functions.\n",
+        "\n",
+        "11.What advantages do dictionaries offer over lists for certain tasks?\n",
+        " - Dictionaries offer several advantages over lists for certain tasks:  \n",
+        "\n",
+        " I. **Fast Lookups**: Dictionaries provide **O(1) average-time complexity** for key-based access, while lists require **O(n) linear search**.  \n",
+        " II. **Key-Value Mapping**: Store and retrieve data using **meaningful keys** instead of numerical indexes.  \n",
+        " III. **Flexible Data Storage**: Can hold **heterogeneous data** efficiently.  \n",
+        " IV. **Efficient Updates**: Adding, updating, and deleting elements is **faster** than modifying lists.  \n",
+        " V. **Uniqueness**: Keys must be **unique**, preventing duplicate entries.\n",
+        "\n",
+        "12.Describe a scenario where using a tuple would be preferable over a list.\n",
+        " - A **tuple** is preferable over a **list** when **data immutability** and **integrity** are required.  \n",
+        "\n",
+        " ### Example Scenario:  \n",
+        " - **Storing Fixed Configuration Settings**: Tuples ensure that settings (e.g., `('localhost', 8080)`) remain unchanged.  \n",
+        " - **Dictionary Keys**: Since tuples are **hashable**, they can be used as **keys** in dictionaries, unlike lists.  \n",
+        " - **Returning Multiple Values from a Function**: Tuples ensure returned data **cannot be accidentally modified**.  \n",
+        " - **Improved Performance**: When dealing with **large read-only datasets**, tuples are **faster and memory-efficient**.\n",
+        "\n",
+        "13.How do sets handle duplicate values in Python?\n",
+        " - **Sets automatically remove duplicate values** in Python. When elements are added, the set **stores only unique values** by using a **hash table** for fast lookups. If a duplicate is added, it is **ignored** instead of being stored again.\n",
+        "\n",
+        "14.How does the “in” keyword work differently for lists and dictionaries?\n",
+        " - The **`in`** keyword works differently for **lists** and **dictionaries** in Python:  \n",
+        "\n",
+        " - **Lists**: Checks if a **value** exists in the list (**O(n) time complexity**).  \n",
+        " - **Dictionaries**: Checks if a **key** exists (**O(1) average-time complexity**) since dictionaries use a **hash table** for lookups.\n",
+        "\n",
+        "15.Can you modify the elements of a tuple? Explain why or why not.\n",
+        " - No, you **cannot** modify the elements of a **tuple** because tuples are **immutable**.  \n",
+        "\n",
+        " ### Reasons:  \n",
+        " I. **Fixed Structure**: Once created, elements **cannot be changed, added, or removed**.  \n",
+        " II. **Memory Efficiency**: Immutability allows **optimization and caching**.  \n",
+        " III. **Hashability**: Tuples can be used as **dictionary keys** and **set elements**.  \n",
+        "\n",
+        " However, if a tuple contains a **mutable object** (e.g., a list), the **mutable object itself can be modified**, but the tuple’s structure remains unchanged.\n",
+        "\n",
+        "16.What is a nested dictionary, and give an example of its use case?\n",
+        " - A **nested dictionary** is a dictionary containing **another dictionary** as a value.  \n",
+        "\n",
+        " ### Example Use Case:  \n",
+        " **Storing Employee Records**  \n",
+        " ```python\n",
+        " employees = {\n",
+        "     \"E001\": {\"name\": \"Alice\", \"age\": 30, \"department\": \"HR\"},\n",
+        "         \"E002\": {\"name\": \"Bob\", \"age\": 25, \"department\": \"IT\"}\n",
+        "         }\n",
+        "         ```\n",
+        "         Here, each **employee ID** maps to another dictionary storing their **details**, making data structured and easily accessible.\n",
+        "\n",
+        "17.Describe the time complexity of accessing elements in a dictionary.\n",
+        " - Accessing elements in a **dictionary** has an **average time complexity of O(1)** due to **hash table lookup**.  \n",
+        "\n",
+        " ### Time Complexity Breakdown:  \n",
+        " - **Best/Average Case**: **O(1)** (Direct key lookup using hashing).  \n",
+        " - **Worst Case**: **O(n)** (When hash collisions occur and chaining or probing is needed).  \n",
+        "\n",
+        " In general, dictionary lookups are **very fast** compared to lists.\n",
+        "\n",
+        "18.In what situations are lists preferred over dictionaries?\n",
+        " - Lists are preferred over dictionaries when:  \n",
+        "\n",
+        " I. **Order Matters**: Lists **maintain element order**, while dictionaries (before Python 3.7) did not.  \n",
+        " II. **Sequential Access**: When data is accessed **by position (indexing)** instead of keys.  \n",
+        " III. **Memory Efficiency**: Lists use **less memory** when storing simple sequences.  \n",
+        " IV. **Iteration is Key**: Iterating over lists is **faster** than iterating over dictionary keys and values.  \n",
+        " V. **No Key-Value Mapping Needed**: Use lists when **only values** are required, without the need for **unique keys**.\n",
+        "\n",
+        "19.Why are dictionaries considered unordered, and how does that affect data retrieval?\n",
+        " - Dictionaries were considered **unordered** before Python 3.7 because they used **hash tables**, where element order was not guaranteed.  \n",
+        "\n",
+        " ### Effect on Data Retrieval:  \n",
+        " - **Pre-Python 3.7**: Items could appear in **any order** when iterating.  \n",
+        " - **Python 3.7+**: Dictionaries maintain **insertion order**, but retrieval is still **key-based, not index-based**.  \n",
+        " - **Random Access**: You must use **keys**, not positions, to fetch values.\n",
+        "\n",
+        "20.Explain the difference between a list and a dictionary in terms of data retrieval.\n",
+        " - ### **Difference in Data Retrieval:**  \n",
+        "\n",
+        " - **List**: Retrieval is **index-based** (`O(1)`) but searching for a value takes **O(n)** (linear search).  \n",
+        " - **Dictionary**: Retrieval is **key-based** (`O(1)`) using a **hash table**, making lookups much faster than lists.  \n",
+        "\n",
+        " Use **lists** when accessing elements by **position** and **dictionaries** when using **meaningful keys** for quick lookups.\n"
+      ],
+      "metadata": {
+        "id": "bD3sEg_K7Mly"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 1. Write a code to create a string with your name and print it.\n",
+        "\n",
+        "name = \"Alice\"\n",
+        "print(name)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "KKsf5pqM7L4I",
+        "outputId": "1749e8a0-f506-4c89-bbf8-03a85400fd60"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Alice\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 2. Write a code to find the length of the string \"Hello World\".\n",
+        "\n",
+        "\n",
+        "text = \"Hello World\"\n",
+        "print(len(text))\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "HGMiW__q7L2V",
+        "outputId": "299c228c-bbd0-4411-8322-f8b32bf176c6"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "11\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 3. Write a code to slice the first 3 characters from the string \"Python Programming\".\n",
+        "\n",
+        "\n",
+        "text = \"Python Programming\"\n",
+        "result = text[:3]\n",
+        "print(result)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "wjB08i1XZ7Ty",
+        "outputId": "b25a8a51-03ea-4859-cbbb-70054e626350"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Pyt\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 4. Write a code to convert the string \"hello\" to uppercase.\n",
+        "\n",
+        "text = \"hello\"\n",
+        "uppercase_text = text.upper()\n",
+        "print(uppercase_text)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "sL5y8IgjcjnT",
+        "outputId": "6a6db6d4-9ee3-4d0b-d0a8-b1755f9cdfd9"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "HELLO\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 5. Write a code to replace the word \"apple\" with \"orange\" in the string \"I like apple\".\n",
+        "\n",
+        "text = \"I like apple\"\n",
+        "modified_text = text.replace(\"apple\", \"orange\")\n",
+        "print(modified_text)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "RdH6yfuqdBsm",
+        "outputId": "ea22cecd-9849-418d-c34b-bd54b67b8c7e"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "I like orange\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 6. Write a code to create a list with numbers 1 to 5 and print it.\n",
+        "\n",
+        "numbers = [1, 2, 3, 4, 5]\n",
+        "print(numbers)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "vhS2DSbLdqT8",
+        "outputId": "d1efbc1b-7e8a-4cbf-b742-ff766a440d92"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1, 2, 3, 4, 5]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 7. Write a code to append the number 10 to the list [1, 2, 3, 4].\n",
+        "\n",
+        "numbers = [1, 2, 3, 4]\n",
+        "numbers.append(10)\n",
+        "print(numbers)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "v_RF9eueeFyS",
+        "outputId": "ef3fb65d-0704-4a65-e43d-2a345446e43b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1, 2, 3, 4, 10]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 8. Write a code to remove the number 3 from the list [1, 2, 3, 4, 5].\n",
+        "\n",
+        "numbers = [1, 2, 3, 4, 5]\n",
+        "numbers.remove(3)\n",
+        "print(numbers)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "AocjX1QJfkgl",
+        "outputId": "2093ff7f-d36d-4fe5-97a6-edb4938b85e7"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1, 2, 4, 5]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 9.Write a code to access the second element in the list ['a', 'b', 'c', 'd'].\n",
+        "\n",
+        "letters = ['a', 'b', 'c', 'd']\n",
+        "second_element = letters[1]  # Indexing starts from 0\n",
+        "print(second_element)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "qWvgchvrf5QH",
+        "outputId": "7e7d113b-0d41-4c5b-bff3-9d1a63dcfc14"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "b\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 10. Write a code to reverse the list [10, 20, 30, 40, 50].\n",
+        "\n",
+        "numbers = [10, 20, 30, 40, 50]\n",
+        "numbers.reverse()  # Using the reverse() method\n",
+        "print(numbers)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "IkjBUZEAgIDg",
+        "outputId": "fe0923db-f5b9-40dc-bc30-5267e8afb3ef"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[50, 40, 30, 20, 10]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 11. Write a code to create a tuple with the elements 100, 200, 300 and print it.\n",
+        "\n",
+        "numbers_tuple = (100, 200, 300)\n",
+        "print(numbers_tuple)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ZHFNOVI7gej3",
+        "outputId": "af53eb57-f105-480d-9056-5807b0f2d31f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "(100, 200, 300)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 12. Write a code to access the second-to-last element of the tuple ('red', 'green', 'blue', 'yellow').\n",
+        "\n",
+        "colors = ('red', 'green', 'blue', 'yellow')\n",
+        "second_to_last = colors[-2]  # Negative indexing: -1 is last, -2 is second-to-last\n",
+        "print(second_to_last)\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "AcFHreAGgrPa",
+        "outputId": "810335c5-22f6-4691-d4a5-2ebc8637423e"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "blue\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 13. Write a code to find the minimum number in the tuple (10, 20, 5, 15).\n",
+        "\n",
+        "numbers = (10, 20, 5, 15)\n",
+        "min_number = min(numbers)  # Using the min() function\n",
+        "print(min_number)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "HD4CC7VQhBXD",
+        "outputId": "7d8946ed-2e3b-4bc4-b3ad-106c21d5129c"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "5\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 14. Write a code to find the index of the element \"cat\" in the tuple ('dog', 'cat', 'rabbit').\n",
+        "\n",
+        "\n",
+        "animals = ('dog', 'cat', 'rabbit')\n",
+        "index_of_cat = animals.index('cat')  # Using the index() method\n",
+        "print(index_of_cat)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "wYnK-Pr_iWSI",
+        "outputId": "0bd064d0-2ff7-4168-cf69-d65f4814f4f9"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 15. Write a code to create a tuple containing three different fruits and check if \"kiwi\" is in it.\n",
+        "\n",
+        "\n",
+        "fruits = ('apple', 'banana', 'orange')\n",
+        "if 'kiwi' in fruits:\n",
+        "\n",
+        "       print(\"Kiwi is in the tuple.\")\n",
+        "else:\n",
+        "\n",
+        "       print(\"Kiwi is not in the tuple.\")\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "o-uUDqM2ihtS",
+        "outputId": "f99b5448-90f1-4a58-eb6e-73835478e050"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Kiwi is not in the tuple.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 16. Write a code to create a set with the elements 'a', 'b', 'c' and print it.\n",
+        "\n",
+        "my_set = {'a', 'b', 'c'}\n",
+        "print(my_set)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "3oT0vx27jYn_",
+        "outputId": "bd2a12e6-9249-4476-e420-fc5e86dbe691"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{'b', 'c', 'a'}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 17.  Write a code to clear all elements from the set {1, 2, 3, 4, 5}.\n",
+        "\n",
+        "my_set = {1, 2, 3, 4, 5}\n",
+        "my_set.clear()  # Removes all elements from the set\n",
+        "print(my_set)\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "G13ti9rjjpUC",
+        "outputId": "c12a04b4-1b02-463e-e706-a153f8b8c775"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "set()\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 18. Write a code to remove the element 4 from the set {1, 2, 3, 4}.\n",
+        "\n",
+        "my_set = {1, 2, 3, 4}\n",
+        "my_set.remove(4)  # Removes the element 4 from the set\n",
+        "print(my_set)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "0riPyK3bkEtg",
+        "outputId": "b2c8c348-3904-47fe-9943-0e3b059a9042"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{1, 2, 3}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 19. Write a code to find the union of two sets {1, 2, 3} and {3, 4, 5}.\n",
+        "\n",
+        "set1 = {1, 2, 3}\n",
+        "set2 = {3, 4, 5}\n",
+        "\n",
+        "union_set = set1.union(set2)  # Using the union() method\n",
+        "print(union_set)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "S3Cjs73ikTOQ",
+        "outputId": "d0897b60-b53f-46a0-8501-a59a74374135"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{1, 2, 3, 4, 5}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 20. Write a code to find the intersection of two sets {1, 2, 3} and {2, 3, 4}.\n",
+        "\n",
+        "set1 = {1, 2, 3}\n",
+        "set2 = {2, 3, 4}\n",
+        "\n",
+        "intersection_set = set1.intersection(set2)  # Using the intersection() method\n",
+        "print(intersection_set)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "RpJGON8GklLL",
+        "outputId": "cd359bc5-e2f4-4b75-d66f-ed5a57036084"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{2, 3}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 21. Write a code to create a dictionary with the keys \"name\", \"age\", and \"city\", and print it.\n",
+        "\n",
+        "person = {\n",
+        "           \"name\": \"Alice\",\n",
+        "           \"age\": 25,\n",
+        "           \"city\": \"New York\"\n",
+        "   }\n",
+        "\n",
+        "print(person)\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "2eqsmPZllnoZ",
+        "outputId": "6ae55f82-a0a7-4793-ccbe-69d803c9efa2"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{'name': 'Alice', 'age': 25, 'city': 'New York'}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 22. Write a code to add a new key-value pair \"country\": \"USA\" to the dictionary {'name': 'John', 'age': 25}.\n",
+        "\n",
+        "person = {'name': 'John', 'age': 25}\n",
+        "person['country'] = 'USA'  # Adding a new key-value pair\n",
+        "print(person)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "J_zy6wJnmqdK",
+        "outputId": "851599f9-ef24-4d90-9f11-2a62b78cdb9a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{'name': 'John', 'age': 25, 'country': 'USA'}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 23. Write a code to access the value associated with the key \"name\" in the dictionary {'name': 'Alice', 'age': 30}.\n",
+        "\n",
+        "person = {'name': 'Alice', 'age': 30}\n",
+        "name_value = person['name']  # Accessing the value using the key\n",
+        "print(name_value)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Clanc3hpm8G3",
+        "outputId": "e47a4516-e6ed-4401-973c-20e8e6332aab"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Alice\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#24. Write a code to remove the key \"age\" from the dictionary {'name': 'Bob', 'age': 22, 'city': 'New York'}.\n",
+        "\n",
+        "person = {'name': 'Bob', 'age': 22, 'city': 'New York'}\n",
+        "person.pop('age')  # Removing the key \"age\"\n",
+        "print(person)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "TmWBiazbnKVR",
+        "outputId": "c2c85995-457d-4f0e-ad16-efdaf664d4b7"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{'name': 'Bob', 'city': 'New York'}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 25. Write a code to check if the key \"city\" exists in the dictionary {'name': 'Alice', 'city': 'Paris'}.\n",
+        "\n",
+        "person = {'name': 'Alice', 'city': 'Paris'}\n",
+        "\n",
+        "if 'city' in person:\n",
+        "    print(\"The key 'city' exists in the dictionary.\")\n",
+        "else:\n",
+        "        print(\"The key 'city' does not exist in the dictionary.\")\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "mGtFQYytnXKc",
+        "outputId": "5045835b-e54c-4dd5-f43d-345d169dee3f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "The key 'city' exists in the dictionary.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 26. Write a code to create a list, a tuple, and a dictionary, and print them all.\n",
+        "\n",
+        "# Creating a list\n",
+        "my_list = [1, 2, 3, 4, 5]\n",
+        "\n",
+        "# Creating a tuple\n",
+        "my_tuple = ('apple', 'banana', 'cherry')\n",
+        "\n",
+        "# Creating a dictionary\n",
+        "my_dict = {'name': 'Alice', 'age': 25, 'city': 'New York'}\n",
+        "\n",
+        "# Printing them all\n",
+        "print(\"List:\", my_list)\n",
+        "print(\"Tuple:\", my_tuple)\n",
+        "print(\"Dictionary:\", my_dict)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "pjPI23BMnmRB",
+        "outputId": "069d95ac-e1dd-4666-f33e-6f56b61f5117"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "List: [1, 2, 3, 4, 5]\n",
+            "Tuple: ('apple', 'banana', 'cherry')\n",
+            "Dictionary: {'name': 'Alice', 'age': 25, 'city': 'New York'}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 27. Write a code to create a list of 5 random numbers between 1 and 100, sort it in ascending order, and print the\n",
+        "#result.(replaced).\n",
+        "\n",
+        "import random\n",
+        "\n",
+        "# Generate a list of 5 random numbers between 1 and 100\n",
+        "random_numbers = random.sample(range(1, 101), 5)\n",
+        "\n",
+        "# Sort the list in ascending order\n",
+        "random_numbers.sort()\n",
+        "\n",
+        "# Print the result\n",
+        "print(\"Sorted random numbers:\", random_numbers)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "AtAfkHDGnzoN",
+        "outputId": "847ef460-94ee-405d-ef51-8c1194b9aca8"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Sorted random numbers: [11, 36, 41, 57, 88]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 28. Write a code to create a list with strings and print the elements of the third index.\n",
+        "\n",
+        "# Creating a list with strings\n",
+        "my_list = [\"apple\", \"banana\", \"cherry\", \"date\", \"elderberry\"]\n",
+        "\n",
+        "# Accessing and printing the element at index 3\n",
+        "print(\"Element at index 3:\", my_list[3])\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "SNyxuFX1oReb",
+        "outputId": "f195d223-7a12-46ba-b1a8-0073732e24ed"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Element at index 3: date\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 29. Write a code to combine two dictionaries into one and print the result.\n",
+        "\n",
+        "# Creating two dictionaries\n",
+        "dict1 = {'a': 1, 'b': 2}\n",
+        "dict2 = {'c': 3, 'd': 4}\n",
+        "\n",
+        "# Merging dictionaries using the update() method\n",
+        "combined_dict = dict1.copy()  # Copying dict1 to avoid modifying it\n",
+        "combined_dict.update(dict2)   # Adding dict2\n",
+        "\n",
+        "# Printing the result\n",
+        "print(\"Combined Dictionary:\", combined_dict)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Ya1Qs9A_pA7A",
+        "outputId": "99ddee4d-8436-4d46-ec15-211e14850d64"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Combined Dictionary: {'a': 1, 'b': 2, 'c': 3, 'd': 4}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 30. Write a code to convert a list of strings into a set.\n",
+        "\n",
+        "# Creating a list of strings\n",
+        "string_list = [\"apple\", \"banana\", \"cherry\", \"apple\", \"banana\"]\n",
+        "\n",
+        "# Converting the list to a set\n",
+        "string_set = set(string_list)\n",
+        "\n",
+        "# Printing the result\n",
+        "print(\"Set:\", string_set)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "EEBQiHnfpfpu",
+        "outputId": "58595ad5-ed0e-4d2f-e42d-18ce343eaafc"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Set: {'cherry', 'banana', 'apple'}\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
